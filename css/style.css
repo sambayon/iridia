@@ -1,0 +1,406 @@
+/*Hoja de estilos*/
+html{
+    background-color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #212121;
+}
+
+body {
+    font-style: normal;
+    line-height: 1.68;
+    letter-spacing: 0;
+}
+
+
+#mySub{
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: normal;
+    padding: 10px;
+    margin: -2px;
+    word-spacing: 2px;
+    letter-spacing: 3px;
+}
+
+
+#mySub2{
+    font-size: 16px;
+    line-height: 26.88px;
+    text-align: center;
+    letter-spacing: normal;
+    margin-top: -5px;
+    color: #555555;
+    margin-bottom: 80px;
+    animation: a-ltr-after 20s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(-101%);
+}
+
+/*ANIMACION*/
+
+#mySub2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    animation: a-ltr-before 8s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(0);
+}
+
+#mySub2 span:nth-of-type(1)::before,
+#mySub2 span:nth-of-type(1)::after{
+    animation-delay: 1s;
+}
+
+#mySub2:nth-of-type(2)::before,
+#mySub2:nth-of-type(2)::after{
+    animation-delay: 20s;
+}
+
+@keyframes a-ltr-after{
+    0% {transform: translateX(-100%)}
+    100% {transform: translateX(101%)}
+}
+
+@keyframes a-ltr-before{
+    0% {transform: translateX(0)}
+    100% {transform: translateX(200%)}
+}
+/*FIN ANIMACION*/
+
+#bannerbox{
+    margin-top: -60px;
+}
+
+p{
+    text-align: center;
+    text-decoration: dashed;
+    margin-bottom: 80px;
+}
+
+.topnav{
+    width: 100%;
+    overflow: auto;
+    margin-top: -20px;
+    font-size: 11px;
+}
+
+.topnav a{
+    float: left;
+    padding: 10px;
+    width: 22%;
+    text-align: center;
+    color: #212121;
+}
+
+@media screen and (max-width: 500px) {
+    .topnav a{
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/*FLEXBOX PRODUCTOS*/
+.product-filter {
+    display: flex;
+  }
+
+.product-filter h1 {
+  flex-grow: 1;
+  }
+
+.sort {
+    display: flex;
+  }
+
+.collection {
+    display: flex;
+    flex-direction: column;
+  }
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+.product-card {
+    padding: 2%;
+    flex-grow: 1;
+    flex-basis: 16%;
+    flex: 1 16%;
+    display: flex; 
+  }
+  
+
+.product-image img {
+    max-width: 100%;
+  }
+.product-info {
+    margin-bottom: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+.product-info h5{
+    text-align: center;
+}
+.product-info h6{
+    text-align: center;
+}
+@media (max-width: 920px) {
+    .product-card {
+      flex: 1 21%;
+    }
+  }
+.products .product-card:first-child, 
+.products .product-card:nth-child(2) {
+    flex: 2 46%;
+  }
+
+@media (max-width: 600px) {
+    .product-card {
+      flex: 1 46%;
+    }
+  }
+
+@media (max-width: 480px) {
+    .product-filter {
+      flex-direction: column;
+    }
+  }
+
+@media (max-width: 480px) {
+    .product-filter {
+      flex-direction: column;
+    }
+    .sort {
+      align-self: flex-start;
+    }
+  }
+
+/*FOOTER*/
+
+#footer{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*SOCIAL MEDIA BUTTONS y TRANSICIÓN*/
+.main{
+    background: rgb(214,214,214);
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+}
+.wrap .btn {
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    margin: 0 25px;
+    text-align: center;
+    border-radius: 50px;
+    overflow: hidden;
+    float: left;
+    box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.9),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-out;
+    cursor: pointer;
+    }
+.btn .icon {
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    background: #333;
+    border-radius: 50px;
+    float: left;
+    box-shadow: inset -7px -7px 20px 0;
+    }
+.btn span {
+    font-size: 24px;
+    font-weight: 600px;
+    line-height: 70px;
+    }
+.btn .icon i {
+    font-size: 30px;
+    line-height: 70px;
+    color: #fff;
+    transition: all 0.4s ease-out;
+    }
+.btn:hover {
+    width: 220px;
+    transition: all 0.4s ease-out;
+    }
+.btn:first-child:hover .icon {
+    background: #3b5998;
+    box-shadow: inset 1px 0 20px 0;
+    }
+.btn:nth-child(2):hover .icon {
+    background: #dd2a7b;
+    box-shadow: inset 1px 0 20px 0;
+    }
+.btn:nth-child(3):hover .icon {
+    background: #00acee;
+    box-shadow: inset 1px 0 20px 0;
+    }
+.btn:last-child:hover .icon {
+    background: #0e76a8;
+    box-shadow: inset 1px 0 20px 0;
+    }
+.btn:first-child:hover {
+    color: #3b5998;
+    }
+.btn:nth-child(2):hover {
+    color: #dd2a7b;
+    }
+.btn:nth-child(3):hover {
+    color: #00acee;
+    }
+.btn:last-child:hover {
+    color: #0e76a8;
+    } 
+/*FORMULARIO*/
+
+form {
+    padding: 37px;
+    margin: 50px 0;
+}
+
+#apellido {
+    float: right;
+    width: 45%;
+}
+
+input [type='text'], [type='email'], select, textarea{
+    border: none;
+    border-bottom: solid 2px #474544;
+    color: #474544;
+    font-size: 1.000em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0em 0 1.875em 0;
+    padding: 0 0 0.875em 0;
+    text-transform: uppercase;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+input[type='text']:focus, [type='email']:focus, textarea:focus {
+    outline: none;
+    padding: 0 0 0.875em 0;
+}
+
+#mensaje{
+    float: none;
+}
+
+#nombre{
+    float: right;
+    width: 45%;
+}
+
+#asunto{
+    width: 100%;
+}
+
+
+#email{
+    width: 100%;
+}
+
+textarea{
+    line-height: 150%;
+    height: 150px;
+    resize: none;
+    width: 100%;
+}
+
+::-webkit-input-placeholder{
+    color: #474544;
+}
+
+:-moz-placeholder{
+    color: #474544;
+    opacity: 1;
+}
+
+::-moz-placeholder{
+    color: #474544;
+    opacity: 1;
+}
+
+:-ms-input-placeholder{
+    color: #474544;
+
+}
+
+#enviar{
+    background: none;
+    border: solid 2px #474544;
+    color: #474544;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    outline: none;
+    padding: 20px 35px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#enviar:hover{
+    background: #474544;
+    color: #F2F3EB;
+}
+
+#contactoform{
+    color: #474544;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#container {
+    border: solid 3px #474544;
+    max-width: 768px;
+    margin: 60px auto;
+    position: relative;
+}
+
+@media screen and (max-width: 768px) {
+    #container {
+        margin: 20px auto;
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #contactoform{
+        font-size: 18px;
+    }
+
+    input[type='text'], [type='email'], select, textarea{
+        font-size: 0.875em;
+    }
+}
+
+
